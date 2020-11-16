@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/usr/bin/env tcsh
 # makes a dummy TEMPO par and tim file to for depolyco
 if ($1 == "") then
     echo "usage: makedummy timfile"

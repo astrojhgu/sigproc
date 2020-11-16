@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/usr/bin/env tcsh
 # updates help files for inclusion in LaTeX manual
 set program = `echo $1 | awk -F/ '{print $NF}'`
 echo "\begin{verbatim}" >! $program.help

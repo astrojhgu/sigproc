@@ -1,3 +1,4 @@
+#!/usr/bin/env tcsh
 ###############################################################################
 #
 # foldsignals - script to dedisperse and fold signals obtained from SEEK

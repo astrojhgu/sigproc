@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/usr/bin/env tcsh
 # script to output which files are different
 foreach file (`ls`)
     if (-e $1/$file) then

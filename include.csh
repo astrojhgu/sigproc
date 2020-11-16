@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/usr/bin/env tcsh
 # This script updates the include file sigproc.h for the sigproc library
 set v = `awk '{print $1}' version.history | tail -2 | head -1`
 cat << END1   >! sigproc.h

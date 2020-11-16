@@ -1,3 +1,4 @@
+#!/usr/bin/env tcsh
 ###############################################################################
 #
 # accn - script to do an acceleration search on a dedispersed time series

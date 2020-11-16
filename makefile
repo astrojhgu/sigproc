@@ -308,12 +308,12 @@ makedmlist :
 	chmod +x $(BIN)/makedmlist
 
 quicklook :
-	echo "#!`which csh`" >               $(BIN)/quicklook
+	echo "#!`which tcsh`" >               $(BIN)/quicklook
 	cat quicklook.csh    >>              $(BIN)/quicklook
 	chmod +x $(BIN)/quicklook
 
 foldsignals :
-	echo "#!`which csh`" >            $(BIN)/foldsignals
+	echo "#!`which tcsh`" >            $(BIN)/foldsignals
 	echo "set bin        = $(BIN)" >> $(BIN)/foldsignals
 	cat foldsignals.csh            >> $(BIN)/foldsignals
 	chmod +x $(BIN)/foldsignals
@@ -363,25 +363,25 @@ postproc : postproc.o
 	rm -f postproc.o
 
 hunt :
-	echo "#!`which csh`" >             $(BIN)/hunt
+	echo "#!`which tcsh`" >             $(BIN)/hunt
 	echo "set bin        = $(BIN)"  >> $(BIN)/hunt
 	cat hunt.csh                    >> $(BIN)/hunt
 	chmod +x $(BIN)/hunt
 
 ahunt :
-	echo "#!`which csh`" >             $(BIN)/ahunt
+	echo "#!`which tcsh`" >             $(BIN)/ahunt
 	echo "set bin        = $(BIN)"  >> $(BIN)/ahunt
 	cat ahunt.csh                    >> $(BIN)/ahunt
 	chmod +x $(BIN)/ahunt
 
 csearch :
-	echo "#!`which csh`" >             $(BIN)/csearch
+	echo "#!`which tcsh`" >             $(BIN)/csearch
 	echo "set bin        = $(BIN)"  >> $(BIN)/csearch
 	cat csearch.csh                 >> $(BIN)/csearch
 	chmod +x $(BIN)/csearch
 
 accn :
-	echo "#!`which csh`" >             $(BIN)/accn
+	echo "#!`which tcsh`" >             $(BIN)/accn
 	echo "set bin        = $(BIN)"  >> $(BIN)/accn
 	cat accn.csh                    >> $(BIN)/accn
 	chmod +x $(BIN)/accn

@@ -1,3 +1,4 @@
+#!/usr/bin/env tcsh
 ###############################################################################
 #
 # ahunt - script to dedisperse and search data using seek over a given DM range

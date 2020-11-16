@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/usr/bin/env tcsh
 echo "Configuration script for SIGPROC makefile..."
 set osname = `printenv OSTYPE`
 if ($osname == "") then

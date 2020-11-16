@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/usr/bin/env tcsh
 if ($1 == "") then
 	echo "usage: subint2prf file"
 	exit

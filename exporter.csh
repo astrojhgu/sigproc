@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/usr/bin/env tcsh
 # exporter.csh - script to produce a tar file for exporting to other machines
 set d = `pwd | awk -F/ '{print $NF}'`
 set v = `awk '{print $1}' version.history | tail -2 | head -1`

@@ -1,3 +1,4 @@
+#!/usr/bin/env tcsh
 # QUICKLOOK : a csh script to process fast-sampled pulsar data 
 if ($1 == "" || $1 == "help") then
     echo ""

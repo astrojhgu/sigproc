@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 cat << END
 #!/bin/sh
 if [ \$# -gt 0 ]

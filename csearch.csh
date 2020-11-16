@@ -1,3 +1,4 @@
+#!/usr/bin/env tcsh
 ###############################################################################
 #
 # csearch - script to do a companion search on a dedispersed time series
