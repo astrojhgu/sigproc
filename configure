@@ -15,16 +15,16 @@ echo "# The following optional libraries need to be edited by hand..." \
 set pgplotdir = `printenv PGPLOT_DIR`
 
 if($pgplotdir == "") then
-echo "#LPGPLOT = -lpgplot -lcpgplot -L/usr/X11R6/lib -lX11" \
+echo "LPGPLOT = -lpgplot -lcpgplot -L/usr/X11R6/lib -lX11" \
                 >> $makefile
 else
 echo "LPGPLOT = -L$PGPLOT_DIR -lpgplot -lcpgplot -L/usr/X11R6/lib -lX11" \
 	        >> $makefile
 endif
 
-echo "#LFITS = -L/usr/local/src/cfitsio -lcfitsio" \
+echo "LFITS = -L/usr/local/src/cfitsio -lcfitsio" \
 		>> $makefile
-echo "#LFFTW = -L/usr/local/lib/ -lfftw3 -lfftw3f" \
+echo "LFFTW = -L/usr/local/lib/ -lfftw3 -lfftw3f" \
 		>> $makefile
 if ($osname == "darwin") then
         echo "F77_LIBS = -lSystemStubs /Developer/SDKs/MacOSX10.3.9.sdk/usr/lib/gcc/darwin/2.95.2/libcc_dynamic.a" >> $makefile
