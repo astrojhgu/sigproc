@@ -1,20 +1,7 @@
 #!/usr/bin/env tcsh
 echo "Configuration script for SIGPROC makefile..."
-set osname = `printenv OSTYPE`
-if ($osname == "") then
-	echo "your OSTYPE variable is undefined..."
-	echo "edit your .cshrc file first to include the line"
-	echo ""
-	echo "setenv OSTYPE osname"
-	echo ""
-	echo "where osname should be either solaris, linux, hpux or darwin"
-	exit
-endif
-echo "Before generating makefile.$osname, please enter the full path to"
-echo "the directory where the SIGPROC executables will be placed..."
-echo "[default = $PWD] "         | awk '{printf "%s ",$0}'
-set bin_dir = $<
-if ($bin_dir == "") set bin_dir = $PWD
+set osname = linux
+set bin_dir = /usr/local/bin
 set makefile = makefile.$osname
 echo "Creating $makefile ..." | awk '{printf "%s ",$0}'
 echo "# makefile.$osname - your system-specific makefile for SIGPROC" \
