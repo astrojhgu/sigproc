@@ -4,7 +4,8 @@
 # YOU SHOULD NOT NORMALLY HAVE TO CHANGE ANYTHING IN THIS FILE !!!!!!!!!!!!!
 ###############################################################################
 include makefile.$(OSTYPE)
-CC = $(CCC) $(DFITS) $(DFFTW) -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+CC = $(CCC) $(DFITS) $(DFFTW) -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -Wno-error=format-security
+FC= f77 -ffixed-line-length-132
 ###############################################################################
 LIB = libsigproc_$(OSTYPE).a
 LIBOBJECTS = \
@@ -190,7 +191,7 @@ gmrt2fil  : gmrt2fil.o library
 
 tune  : tune.o library
 	$(CC)  -c tune.c 
-	$(F77) -o $(BIN)/tune tune.o $(LIB) -lm $(LFITS) $(LPGPLOT)
+	$(FC) -o $(BIN)/tune tune.o $(LIB) -lm $(LFITS) $(LPGPLOT)
 	rm -f tune.o
 flatten  : flatten.o library 
 	$(CC) -o $(BIN)/flatten flatten.o  $(LIB) -lm $(LFITS)
@@ -295,7 +296,7 @@ monitor :
 
 pgplotter: pgplotter.o library
 	$(CC) -c pgplotter.c
-	$(F77) -o $(BIN)/pgplotter pgplotter.o $(LIB) $(LPGPLOT) -lm
+	$(FC) -o $(BIN)/pgplotter pgplotter.o $(LIB) $(LPGPLOT) -lm
 
 polyco :
 	echo "#!`which tclsh`" >  $(BIN)/polyco
@@ -391,14 +392,14 @@ makedummy :
 	chmod +x $(BIN)/makedummy
 
 quickplot : quickplot.o 
-	$(F77) -o $(BIN)/quickplot quickplot.o $(LPGPLOT)
+	$(FC) -o $(BIN)/quickplot quickplot.o $(LPGPLOT)
 
 plotpulses : plotpulses.o 
-	$(F77) -o $(BIN)/plotpulses plotpulses.o $(LPGPLOT)
+	$(FC) -o $(BIN)/plotpulses plotpulses.o $(LPGPLOT)
 
 getpulse : getpulse.o library
 	$(CC) -c getpulse.c
-	$(F77) -o $(BIN)/getpulse getpulse.o $(LIB) $(LPGPLOT) -lm
+	$(FC) -o $(BIN)/getpulse getpulse.o $(LIB) $(LPGPLOT) -lm
 
 head_parse.o: head_parse.c mkheaderlex.c
 	$(CC) -I. -I/opt/local/include -D$(OSTYPE) -c head_parse.c
@@ -449,7 +450,7 @@ documentation: help
 	latex sigproc
 	dvipdf sigproc
 
-export :
+export:
 	./exporter.csh
 
 ###############################################################################
